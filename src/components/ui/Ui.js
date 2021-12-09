@@ -16,7 +16,19 @@ import {
 import { Menu as MenuIcon, PhotoCamera } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles((theme) => {
+  return {
+    container: {
+      backgroundColor: theme.palette.background.paper,
+      padding: theme.spacing(8, 0, 6),
+    },
+  };
+});
+
 export const Ui = () => {
+  const classes = useStyles();
+  console.log(classes);
+
   return (
     <>
       <CssBaseline />
@@ -29,8 +41,8 @@ export const Ui = () => {
         </Toolbar>
       </AppBar>
       <main>
-        <div>
-          <Container style={{ background: "yellow" }} maxWidth="sm">
+        <div className={classes.container}>
+          <Container maxWidth="sm">
             <Typography
               variant="h2"
               align="center"
@@ -49,7 +61,7 @@ export const Ui = () => {
               sentence as long as possible. I'm learning material UI.{" "}
             </Typography>
             <div>
-              <Grid container spacing={2} justify="center">
+              <Grid container spacing={2} justifyContent="center">
                 <Grid item>
                   <Button variant="contained" color="primary">
                     See my photos
