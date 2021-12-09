@@ -11,6 +11,7 @@ import {
   CssBaseline,
   Grid,
   Container,
+  ButtonGroup,
 } from "@material-ui/core";
 import { Menu as MenuIcon, PhotoCamera } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
@@ -47,6 +48,20 @@ export const Ui = () => {
               Hello everyone this is a photo album and I'm trying to make this
               sentence as long as possible. I'm learning material UI.{" "}
             </Typography>
+            <div>
+              <Grid container spacing={2} justify="center">
+                <Grid item>
+                  <Button variant="contained" color="primary">
+                    See my photos
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button variant="outlined" color="primary">
+                    Secondary Action
+                  </Button>
+                </Grid>
+              </Grid>
+            </div>
           </Container>
         </div>
       </main>
