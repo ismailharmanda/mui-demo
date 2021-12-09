@@ -16,6 +16,8 @@ import {
 import { Menu as MenuIcon, PhotoCamera } from "@material-ui/icons";
 import { useStyles } from "./styles";
 
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 export const Ui = () => {
   const classes = useStyles();
   console.log(classes);
@@ -69,32 +71,36 @@ export const Ui = () => {
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4}>
-            <Grid item>
-              <Card className={classes.card}>
-                <CardMedia
-                  className={classes.cardMedia}
-                  image="https://source.unsplash.com/random"
-                  title="image title"
-                />
-                <CardContent className={classes.cardContent}>
-                  <Typography variant="h5" gutterBottom>
-                    Heading
-                  </Typography>
-                  <Typography gutterBottom>
-                    This is a media card. ypu can use this section to describe
-                    content.
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small" color="primary">
-                    View
-                  </Button>
-                  <Button size="small" color="primary">
-                    Edit
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
+            {cards.map((card) => {
+              return (
+                <Grid key={card} xs={12} sm={6} md={4} item>
+                  <Card className={classes.card}>
+                    <CardMedia
+                      className={classes.cardMedia}
+                      image="https://source.unsplash.com/random"
+                      title="image title"
+                    />
+                    <CardContent className={classes.cardContent}>
+                      <Typography variant="h5" gutterBottom>
+                        Heading
+                      </Typography>
+                      <Typography gutterBottom>
+                        This is a media card. ypu can use this section to
+                        describe content.
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button size="small" color="primary">
+                        View
+                      </Button>
+                      <Button size="small" color="primary">
+                        Edit
+                      </Button>
+                    </CardActions>
+                  </Card>
+                </Grid>
+              );
+            })}
           </Grid>
         </Container>
       </main>
