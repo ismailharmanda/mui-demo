@@ -14,16 +14,7 @@ import {
   ButtonGroup,
 } from "@material-ui/core";
 import { Menu as MenuIcon, PhotoCamera } from "@material-ui/icons";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => {
-  return {
-    container: {
-      backgroundColor: theme.palette.background.paper,
-      padding: theme.spacing(8, 0, 6),
-    },
-  };
-});
+import { useStyles } from "./styles";
 
 export const Ui = () => {
   const classes = useStyles();
@@ -35,7 +26,7 @@ export const Ui = () => {
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu">
-            <PhotoCamera />
+            <PhotoCamera className={classes.icon} />
           </IconButton>
           <Typography variant="h6">Album Layout</Typography>
         </Toolbar>
@@ -60,7 +51,7 @@ export const Ui = () => {
               Hello everyone this is a photo album and I'm trying to make this
               sentence as long as possible. I'm learning material UI.{" "}
             </Typography>
-            <div>
+            <div className={classes.buttons}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
                   <Button variant="contained" color="primary">
@@ -76,6 +67,36 @@ export const Ui = () => {
             </div>
           </Container>
         </div>
+        <Container className={classes.cardGrid} maxWidth="md">
+          <Grid container spacing={4}>
+            <Grid item>
+              <Card className={classes.card}>
+                <CardMedia
+                  className={classes.cardMedia}
+                  image="https://source.unsplash.com/random"
+                  title="image title"
+                />
+                <CardContent className={classes.cardContent}>
+                  <Typography variant="h5" gutterBottom>
+                    Heading
+                  </Typography>
+                  <Typography gutterBottom>
+                    This is a media card. ypu can use this section to describe
+                    content.
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    View
+                  </Button>
+                  <Button size="small" color="primary">
+                    Edit
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          </Grid>
+        </Container>
       </main>
     </>
   );
