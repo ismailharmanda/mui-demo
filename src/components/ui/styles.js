@@ -18,5 +18,9 @@ export const useStyles = makeStyles((theme) => {
       paddingTop: "56.25%", //16:9
     },
     cardContent: { flexGrow: 1 },
+    footer: {
+      backgroundColor: theme.palette.background.paper,
+      padding: "100px",
+    },
   };
 });

@@ -4,7 +4,6 @@ const App = () => {
   return (
     <>
       <Ui />
-      <Typography>Hello world!</Typography>
     </>
   );
 };
